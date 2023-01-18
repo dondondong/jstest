@@ -1,5 +1,5 @@
 window.onload = function(){
-// DOM基本概念
+// DOM的基本概念
 // Document Object Model
 // DOM是JS操控HTML文档的接口，使文档操作变得优雅。
 // DOM的最大特点是把文档表示为节点树
