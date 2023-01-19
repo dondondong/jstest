@@ -1,4 +1,4 @@
-window.onload = function(){
+
 // DOM的基本概念
 // Document Object Model
 // DOM是JS操控HTML文档的接口，使文档操作变得优雅。
@@ -29,41 +29,105 @@ window.onload = function(){
 // var ps = box1.getElementsByTagName('p');
 // console.log(ps);
 
+// querySelector()通过选择器得到元素，只能得到第一个元素
+// const aa = document.querySelector('#box .spec');
+// console.log(aa);
+// querySelectorAll()通过选择器得到元素数组
+// const l = document.querySelectorAll('#box p');
+// console.log(l);
+
+// 节点的关系
+// childNodes, parentNodes, firstChild, lastChild
+// 兄弟节点 nextSibling, previousSibling
+// 文本节点也属于节点
+// 只考虑元素节点：children, parentNode, firstElementChild, lastElementChild, previousElementSibling, nextElementSibling
+// console.log(document.getElementById('box').children.spec)
+// console.log(document.getElementById('box').firstElementChild)
+// console.log(document.getElementById('spec').parentNode)
+// console.log(document.getElementById('spec').previousElementSibling)
+
 // ----------
 
 // 节点操作
 
-// ----------
+// 改变元素节点中的内容
+// 两个属性：innerHTML, innerText
+// innerHTML 使用 HTML 语法，innerText 使用纯文本
+// var oBox = document.getElementById('box');
+// oBox.innerHTML = 'fuck';
+// oBox.innerText = 'fu';
 
-// 节点创建、移除和克隆
+// 改变元素节点的CSS样式
+// var oBox = document.querySelector('#box');
+// oBox.style.backgroundImage = 'url(imgage/1.jpg)';
+// oBox.style.backgroundColor = '#222';
+// oBox.style.fontSize = '120px';
+// oBox.style.color = '#fff';
+// oBox.style.className = 'aaa';
+// var button = document.getElementById('button');
+// function getRandomNumber() {
+//     return ((Math.random() * 10) * 10).toString();
+// }
+// var loop = setInterval(
+//     function () {
+//         oBox.style.fontSize = getRandomNumber() + 'px';
+//     }, 500);
+// button.addEventListener('click', function () {
+//     clearInterval(loop)
+// })
 
-// ----------
+// // src、href等可以直接打点，如 oImg.src = 'images/2.jpg';
+// // 不符合W3C标准的属性，要使用 setArribute() 和 getAttribute() 来设置和读取
+// oBox.setAttribute('data-n', 1)
+// console.log(oBox.getAttribute('data-n'))
 
-// DOM事件
-
-// ----------
-
-// 实现动画
-
-// ----------
-
-// 动画效果开发
-
-// ----------
-
-
-
-
-
-
-
-
-
+// 增加 className
+// const box = document.getElementsByClassName('spec')[0];
+// console.log(box);
+// function addClassName(element, value) {
+//     var newClassName = "";
+//     if (!element.className){
+//         element.className = value;
+//     } else {
+//         newClassName = element.className;
+//         newClassName += " ";
+//         newClassName += value;
+//         element.className = newClassName;
+//     }
+// }
+// addClassName(box, 'fuck');
 
 
+    // ----------
+
+    // 节点创建、移除和克隆
+
+    // ----------
+
+    // DOM事件
+
+    // ----------
+
+    // 实现动画
+
+    // ----------
+
+    // 动画效果开发
+
+    // ----------
 
 
 
 
 
-}
+
+
+
+
+
+
+
+
+
+
+
