@@ -259,7 +259,24 @@
 
 // 定时器
 // setInterval()函数
-// 
+// setInterval(function (){}, 2000);
+// setInterval(function (a, b){}, 2000, 88 ,66); 可以传参
+// setInterval(fun, 2000); 具名函数也可以传入，没有()
+// var timer = setInterval(fun, 2000);
+// oBtn.onclick = function(){ clearInterval(timer); };
+// var a = 0;
+// var timer;
+// oBtn.onclick = function () {
+//     // 清楚定时器，防止猛点击
+//     clearInterval(timer);
+//     // 设置定时器(注意没加“var”)
+//     timer = setInterval(function () {
+//         oInfo.innerText = ++a;
+//     }, 2000)
+// }
+// oBtn2.onclick = function(){
+//     clearInterval(timer);
+// }
 
 // ----------
 
