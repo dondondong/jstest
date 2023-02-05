@@ -278,9 +278,45 @@
 //     clearInterval(timer);
 // }
 
+// 延时器
+// 在xx毫秒之后，只执行一次
+// setTimeout( function (){}, 2000);
+// clearTimeout()
+
+// 异步语句
+// 不会阻塞cpu继续执行其他语句，当异步完成时，会执行“回调函数”（callback）
+
 // ----------
 
 // 实现动画
+// JS结合CSS3实现动画
+// var box = document.getElementsByClassName('spec')[0];
+// var btn = document.getElementById('button');
+// // 设置标识量
+// var pos = 1;
+// // 设置函数节流
+// var lock = true;
+// btn.addEventListener('click', function () {
+//     // 如果锁关闭，则不执行
+//     if (!lock) return;
+//     // 函数语句
+//     if (pos === 1) {
+//         box.style.transition = 'all 0.5s ease-in-out 0s';
+//         box.style.left = '1200px';
+//         pos = 2;
+//     } else {
+//         box.style.transition = 'all 0.5s ease-in-out 0s';
+//         box.style.left = '-100px';
+//         pos = 1;
+//     }
+//     // 关锁
+//     lock = false;
+//     // 指定（动画）时间后将锁打开
+//     setTimeout(function(){
+//         lock = true;
+//     }, 500);    
+// })
+
 
 // ----------
 
