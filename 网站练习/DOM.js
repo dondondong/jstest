@@ -322,6 +322,34 @@
 
 // 动画效果开发
 
+// 无穷无尽的滚动
+    // var box = document.getElementById('box');
+    // var list = document.getElementById('list');
+    // list.innerHTML += list.innerHTML;
+    // var left = 0;
+    // var timer;
+    // var num = 20;
+    // // 动画封装成函数
+    // function move() {
+    //     // 设表先关，防止动画积累
+    //      clearInterval(timer);
+    //     timer = setInterval(function () {
+    //         left -= 2;
+    //         if (left <= -497.76) {
+    //             left = 0;
+    //         }
+    //         list.style.left = left + 'px';
+    //     }, num)
+    // }
+    // move();
+    // box.onmouseenter = function () {
+    //     clearInterval(timer);
+    // }
+    // box.onmouseleave = function () {
+    //     move();
+    // }
+
+
 // ----------
 
 

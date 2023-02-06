@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="spec"></div>
+    <!-- <div class="spec"></div>
     <input type="text" id="field">
     <button id="button">1111</button>
     <div id="box">
@@ -23,8 +23,18 @@
         <p>1</p>
         <p>1</p>
         <p>1</p>
-    </div>
+    </div> -->
 
+<!-- 无缝动画 -->
+<!-- <div class="box" id="box">
+    <ul id="list">
+        <li>fuck</li>
+        <li>fuck</li>
+        <li>fuck</li>
+        <li>fuck</li>
+        <li>fuck</li>
+    </ul>
+</div> -->
 
     
 
@@ -40,6 +50,32 @@
         position: absolute;
         top: 100px;
         left: 100px;
+    }
+
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    .box {
+         width: 200px;
+         height: 100px;
+         border: 1px solid #222;
+         margin: auto;
+         overflow: hidden;
+    }    
+
+    .box ul{
+        list-style: none;
+        font-size: 40px;
+        font-weight: 800;
+        width: 2000px;
+        position: relative;
+    }
+    .box li{
+        float: left;
+        
+        left: 30px;
     }
 </style>
 
