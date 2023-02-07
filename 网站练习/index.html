@@ -25,8 +25,8 @@
         <p>1</p>
     </div> -->
 
-<!-- 无缝动画 -->
-<!-- <div class="box" id="box">
+    <!-- 无缝动画 -->
+    <!-- <div class="box" id="box">
     <ul id="list">
         <li>fuck</li>
         <li>fuck</li>
@@ -36,7 +36,21 @@
     </ul>
 </div> -->
 
-    
+    <!-- 轮播图 -->
+    <div class="carousel">
+        <a href="javascript:;" class="left-btn"></a>
+        <a href="javascript:;" class="right-btn"></a>
+        <ul id="ul">
+            <li><div>1</div></li>
+            <li><div>2</div></li>
+            <li><div>3</div></li>
+            <li><div>4</div></li>
+            <li><div>5</div></li>
+            <li><div>6</div></li>
+        </ul>
+    </div>
+
+
 
 
 
@@ -52,12 +66,13 @@
         left: 100px;
     }
 
-    *{
+    * {
         margin: 0;
         padding: 0;
     }
 
-    .box {
+    /* 无缝滚动 */
+    /* .box {
          width: 200px;
          height: 100px;
          border: 1px solid #222;
@@ -74,8 +89,66 @@
     }
     .box li{
         float: left;
-        
         left: 30px;
+    } */
+
+    /* 轮播图 */
+    .carousel {
+        margin: auto;
+        width: 600px;
+        height: 200px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .carousel ul {
+        list-style: none;
+        position: relative;
+        width: max-content;
+        left: 0px;
+    }
+
+    .carousel li {
+        float: left;
+        position: relative;
+        width: 200px;
+        height: 200px;
+    }
+
+    li > div {
+        font-size: 60px;
+        font-weight: 800;
+        margin: 10px 40px;
+    }
+
+    .left-btn {
+        z-index: 1;
+        top: 50%;
+        margin-top: -15px;
+        position: absolute;
+        left: 0px ;
+        width: 30px;
+        height: 30px;
+        background-color: #222;
+    }
+
+    .left-btn:hover{
+        background-color: yellow;
+    }
+
+    .right-btn {
+        z-index: 1;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        margin-top: -15px;
+        width: 30px;
+        height: 30px;
+        background-color: #222;
+    }
+
+    .right-btn:hover{
+        background-color: yellow;
     }
 </style>
 

@@ -323,32 +323,98 @@
 // 动画效果开发
 
 // 无穷无尽的滚动
-    // var box = document.getElementById('box');
-    // var list = document.getElementById('list');
-    // list.innerHTML += list.innerHTML;
-    // var left = 0;
-    // var timer;
-    // var num = 20;
-    // // 动画封装成函数
-    // function move() {
-    //     // 设表先关，防止动画积累
-    //      clearInterval(timer);
-    //     timer = setInterval(function () {
-    //         left -= 2;
-    //         if (left <= -497.76) {
-    //             left = 0;
-    //         }
-    //         list.style.left = left + 'px';
-    //     }, num)
-    // }
-    // move();
-    // box.onmouseenter = function () {
-    //     clearInterval(timer);
-    // }
-    // box.onmouseleave = function () {
-    //     move();
-    // }
+// var box = document.getElementById('box');
+// var list = document.getElementById('list');
+// list.innerHTML += list.innerHTML;
+// var left = 0;
+// var timer;
+// var num = 20;
+// // 动画封装成函数
+// function move() {
+//     // 设表先关，防止动画积累
+//      clearInterval(timer);
+//     timer = setInterval(function () {
+//         left -= 2;
+//         if (left <= -497.76) {
+//             left = 0;
+//         }
+//         list.style.left = left + 'px';
+//     }, num)
+// }
+// move();
+// box.onmouseenter = function () {
+//     clearInterval(timer);
+// }
+// box.onmouseleave = function () {
+//     move();
+// }
 
+// 轮播图
+
+// 随机Hex颜色
+var getRandomColor = function () {
+    return '#' + (function (color) {
+        return (color += '0123456789abcdef'[Math.floor(Math.random() * 16)])
+            && (color.length == 6) ? color : arguments.callee(color);
+    })('');
+}
+
+// 获得ul元素与其子元素的数组（oli）
+var oul = document.getElementById('ul');
+var oli = oul.children;
+var carousel = document.getElementsByClassName('carousel')[0];
+
+// 利用节点，li应用随机背景色
+for (var i = 0; i < oli.length; i++) {
+    var bgColor = getRandomColor()
+    oli[i].style.background = bgColor;
+}
+// 随机边框色
+carousel.style.border = '5px solid' + bgColor;
+// 获得左右按钮
+var lbtn = document.getElementsByClassName('left-btn')[0];
+var rbtn = document.getElementsByClassName('right-btn')[0];
+// 定义当前轮播位置
+var idx = 0;
+// 在右侧克隆一批
+function clone() {
+    const oliLength = oli.length;
+    for (var l = 0; l < oliLength; l++) {
+        var newLi = oul.children[l].cloneNode(true);
+        oul.appendChild(newLi);
+    }
+}
+clone();
+// 轮播动画时长
+var aniTimer = 300;
+// 封装左移函数
+function moveLeft() {
+    // 获取第一个li的宽度（截取除了‘px’以外的字符串）
+    var oliWidthStr = window.getComputedStyle(oli[0]).width;
+    var oliWidth = oliWidthStr.substring(0, oliWidthStr.length - 2);
+    // 控制oli左移每个li的宽度
+    oul.style.left = -idx * oliWidth + 'px';
+}
+// 点击左边按钮
+lbtn.addEventListener('click',
+    function () {
+        // oul加入移动过渡动画
+        oul.style.transition = 'left ' + (aniTimer / 1000) + 's ease-in-out 0s';
+        // 轮播图切换
+        idx++;
+        // 如果idx到达oli的一半长度（克隆后的轮播总数的一半），则idx重置为0
+        if (idx >= oli.length / 2) {
+            setTimeout(
+                function () {
+                    idx = 0;
+                    oul.style.transition = 'none';
+                    moveLeft();
+                }
+                , aniTimer)
+        }
+        moveLeft();
+    }
+)
 
 // ----------
 
