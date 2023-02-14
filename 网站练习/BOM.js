@@ -24,3 +24,7 @@
 // navigator.platform 操作系统
 // navigator.appVersion 浏览器版本
 // navigator.userAgent 用户代理
+
+// history
+// history.back(); 等于回退
+// history.go(-1); 等于back
