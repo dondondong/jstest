@@ -9,7 +9,7 @@
     <!-- 给window添加事件监听 -->
 </head>
 
-<body>
+<body style="height: 5000px;">
     <!-- <div class="spec"></div>
     <input type="text" id="field">
     <button id="button">1111</button>
@@ -49,14 +49,38 @@
             <li><div>6</div></li>
         </ul>
     </div> -->
-    
+
     <!-- 回退 -->
     <!-- <a href="javascript: history.back();">回退</a> -->
+
+    <!-- 返回顶部 -->
+    <!-- <button id="buttontop" style="position: fixed; bottom: 20px; left: 20px;">back to top</button> -->
+
+    <!-- 滚动导航 -->
+    <section id="aaa" class="floor" data-n="0">0</section>
+    <section class="floor" data-n="1">1</section>
+    <section class="floor" data-n="2">2</section>
+    <section class="floor" data-n="3">3</section>
+    <section class="floor" data-n="4">4</section>
+    <section class="floor" data-n="5">5</section>
+
+    <div id="nav" class="navigator">
+        <div class="navigator-item" data-n="0">0</div>
+        <div class="navigator-item" data-n="1">1</div>
+        <div class="navigator-item" data-n="2">2</div>
+        <div class="navigator-item" data-n="3">3</div>
+        <div class="navigator-item" data-n="4">4</div>
+        <div class="navigator-item" data-n="5">5</div>
+    </div>
 
     <script src="DOM.js"></script>
     <script src="BOM.js"></script>
 </body>
 <style>
+    body {
+        background: linear-gradient(180deg, #001aff 0%, #ff38bd 100%);
+    }
+
     .spec {
         height: 200px;
         width: 200px;
@@ -115,7 +139,7 @@
         height: 200px;
     }
 
-    li > div {
+    li>div {
         font-size: 60px;
         font-weight: 800;
         margin: 10px 40px;
@@ -126,13 +150,13 @@
         top: 50%;
         margin-top: -15px;
         position: absolute;
-        left: 0px ;
+        left: 0px;
         width: 30px;
         height: 30px;
         background-color: #222;
     }
 
-    .left-btn:hover{
+    .left-btn:hover {
         background-color: yellow;
     }
 
@@ -147,8 +171,39 @@
         background-color: #222;
     }
 
-    .right-btn:hover{
+    .right-btn:hover {
         background-color: yellow;
+    }
+
+    .floor {
+        margin-left: 50px;
+        font-size: 20vw;
+        color: #fff;
+        height: 1.8;
+        font-weight: 800;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    .navigator-item {
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: 800;
+        font-size: 20px;
+        line-height: 1.2;
+        color: #fff;
+        width: 40px;
+        cursor: pointer;
+    }
+
+    .navigator-item:hover{
+        opacity: .6;
+        cursor: pointer;
+    }
+
+    .navigator {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
     }
 </style>
 
