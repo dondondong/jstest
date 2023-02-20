@@ -51,56 +51,55 @@
 // 特效：楼层导航
 // offsetTop 此元素到定位祖先元素的垂直距离
 // window.onscroll = () => { console.log(document.documentElement.scrollTop) }
+// var nav = document.getElementById('nav');
+// var timer;
+// var lock = true;
 
-var nav = document.getElementById('nav');
-var timer;
-var lock = true;
+// var body = document.getElementsByTagName('body')[0];
+// var bodyHeightStr = window.getComputedStyle(body).height;
+// var bodyHeight = Number(bodyHeightStr.substring(0, bodyHeightStr.length - 2));
 
-var body = document.getElementsByTagName('body')[0];
-var bodyHeightStr = window.getComputedStyle(body).height;
-var bodyHeight = Number(bodyHeightStr.substring(0, bodyHeightStr.length - 2));
+// nav.addEventListener('click',
+//     function (e) {
+//         if (!lock || bodyHeight - window.innerHeight < 0) {
+//             console.log('not ok');
+//             return;
+//         } else {
 
-nav.addEventListener('click',
-    function (e) {
-        if (!lock || bodyHeight - window.innerHeight < 0) {
-            console.log('not ok');
-            return;
-        } else {
+//             if (e.target.className.toLowerCase() == 'navigator-item') {
+//                 var n = e.target.getAttribute('data-n');
+//                 var currentTarget = document.querySelector('.floor[data-n=' + '"' + n + '"' + ']');
+//                 var currentTop = currentTarget.offsetTop;
+//                 // 滚动：根据滚动距离与元素top的差判断往上还是往下滚动
+//                 if (document.documentElement.scrollTop > currentTop) {
+//                     clearInterval(timer);
+//                     var timer = setInterval(() => {
+//                         document.documentElement.scrollTop -= Math.ceil((document.documentElement.scrollTop - currentTop) / 20);
+//                         console.log(document.documentElement.scrollTop)
+//                         lock = false;
 
-            if (e.target.className.toLowerCase() == 'navigator-item') {
-                var n = e.target.getAttribute('data-n');
-                var currentTarget = document.querySelector('.floor[data-n=' + '"' + n + '"' + ']');
-                var currentTop = currentTarget.offsetTop;
-                // 滚动：根据滚动距离与元素top的差判断往上还是往下滚动
-                if (document.documentElement.scrollTop > currentTop) {
-                    clearInterval(timer);
-                    var timer = setInterval(() => {
-                        document.documentElement.scrollTop -= Math.ceil((document.documentElement.scrollTop - currentTop) / 20);
-                        console.log(document.documentElement.scrollTop)
-                        lock = false;
+//                         if (document.documentElement.scrollTop <= currentTop || bodyHeight - window.innerHeight === document.documentElement.scrollTop) {
+//                             clearInterval(timer);
+//                             lock = true;
+//                         }
+//                     }, 10);
+//                 } else if (document.documentElement.scrollTop < currentTop) {
+//                     clearInterval(timer);
+//                     var timer = setInterval(() => {
+//                         document.documentElement.scrollTop += Math.ceil(-(document.documentElement.scrollTop - currentTop) / 20);
+//                         console.log(document.documentElement.scrollTop);
+//                         lock = false;
 
-                        if (document.documentElement.scrollTop <= currentTop || bodyHeight - window.innerHeight === document.documentElement.scrollTop) {
-                            clearInterval(timer);
-                            lock = true;
-                        }
-                    }, 10);
-                } else if (document.documentElement.scrollTop < currentTop) {
-                    clearInterval(timer);
-                    var timer = setInterval(() => {
-                        document.documentElement.scrollTop += Math.ceil(-(document.documentElement.scrollTop - currentTop) / 20);
-                        console.log(document.documentElement.scrollTop);
-                        lock = false;
+//                         if (document.documentElement.scrollTop >= currentTop || bodyHeight - window.innerHeight === document.documentElement.scrollTop) {
+//                             clearInterval(timer);
+//                             lock = true;
+//                         }
+//                     }, 10);
+//                 }
+//             }
 
-                        if (document.documentElement.scrollTop >= currentTop || bodyHeight - window.innerHeight === document.documentElement.scrollTop) {
-                            clearInterval(timer);
-                            lock = true;
-                        }
-                    }, 10);
-                }
-            }
+//         }
 
-        }
-
-    })
+//     })
 
 // console.log(document.getElementById('children').offsetTop);
