@@ -1,0 +1,11 @@
+{
+  "name": "渐变测试",
+  "api": "1.0.0",
+  "main": "colorthief.js",
+  "ui": "index-colorthief.html",
+  "id": "73184120488798237",
+  "editorType": [
+    "figma"
+  ]
+}
+

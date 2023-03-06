@@ -1,0 +1,12 @@
+{
+  "name": "NIO Gradient Generator",
+  "id": "1212382328504710893",
+  "api": "1.0.0",
+  "main": "code.js",
+  "capabilities": [],
+  "enableProposedApi": false,
+  "editorType": [
+    "figma"
+  ],
+  "ui": "ui.html"
+}

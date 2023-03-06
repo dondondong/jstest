@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>段落展开和收起</title>
+    <style>
+        .body {
+            font-size: 16px;
+        }
+
+        .text {
+            font-family: sans-serif;
+            font-size: 1em;
+            margin: 0 auto;
+            width: 300px;
+            background: #ffffff;
+            color: #606266;
+            word-break: break-word;
+            /* padding: 10px 15px; */
+            border: 1px solid #dfdfdf;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .ell {
+            margin-right: 2em;
+            /* margin-left: 2px; */
+        }
+
+        .collapse-text {
+            position: absolute;
+            right: 0px;
+            bottom: 0;
+            color: #409eff;
+            cursor: pointer;
+        }
+
+        .collapse-text:active {
+            color: #3a8ee6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="text">
+        <span class="span">近日，陕西省考古研究院考古人员发掘了一处唐代贵族家族墓地，在一座夫妻合葬中发现一方由唐代大书法家颜真卿书写的墓志铭。考古人员说，<span
+                style="color: red;">(换行)</span><br>颜真卿书写墓志的年代是天宝五年，它是在颜真卿三十八岁的时候书写的，这是目前唯一经过科学考古发掘出土的颜真卿早期书法真迹。</span>
+        <span class="collapse-text"> 展开</span>
+    </div>
+
+    <script>
+        // 计算文本行数
+        function getLength(rects) {
+            var line = 0, lastBottom = 0;
+            for (var i = 0, len = rects.length; i < len; i++) {
+                if (rects[i].bottom == lastBottom) {
+                    continue
+                }
+                lastBottom = rects[i].bottom;
+                line++;
+            }
+            return line;
+        }
+        // 初始化变量定义、赋值
+        var span1 = document.getElementsByClassName('span')[0];
+        var originalText = span1.innerHTML; // 源数据存储变量
+        var changeText = span1.innerHTML;	// 计算数据变量
+        var span1Rects = span1.getClientRects();
+        var h = getLength(span1Rects); //行数
+
+        // 预设函数：3
+        while (h > 3) {
+            var step = 1;
+            changeText = changeText.slice(0, -step);
+            span1.innerHTML = changeText + '<span class="ell">...</span>';
+            h = getLength(span1.getClientRects());
+        }
+
+        // <span id="collapse-btn" class="collapse-text" data-spread="false"> 展开</span>
+
+        window.addEventListener('click', function (e) {
+            var state = document.getElementById('collapse-btn').dataset.spread;
+            if (state === 'false') {
+                span1.innerHTML = originalText + '<span id="collapse-btn" class="collapse-text" data-spread="true">收起</span>'
+            } else {
+                span1.innerHTML = changeText + '<span>...</span><span id="collapse-btn" class="collapse-text" data-spread="false"> 展开</span>'
+            }
+        });
+    </script>
+
+</body>
+
+</html>
