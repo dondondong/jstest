@@ -29,3 +29,31 @@
 // +一个''，可以数字转换为字符串
 // 123 + '' // '123'
 
+// 遍历（迭代）
+// for in
+// for in 只跟对象配合使用
+
+// 遍历对象
+var person = {
+    name: '11',
+    age: '22'
+}
+
+// for(var key in person){
+//     console.log(key, person[key])
+// }
+
+// 遍历并赋值
+// for(var key in person){
+//     person[key]=66;
+//     console.log(key, person[key])
+// }
+
+// for(var key in person){
+//     if(key === 'age'){
+//         person[key] = '66';
+//     }
+//     console.log(key, person[key])
+// }
+
+
