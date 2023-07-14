@@ -34,10 +34,10 @@
 // for in 只跟对象配合使用
 
 // 遍历对象
-var person = {
-    name: '11',
-    age: '22'
-}
+// var person = {
+//     name: '11',
+//     age: '22'
+// }
 
 // for(var key in person){
 //     console.log(key, person[key])
