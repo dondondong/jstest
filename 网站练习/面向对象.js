@@ -30,5 +30,7 @@
 // for(var k in obj){
 //     console.log('属性' + k + '的值是' + obj[k]);
 // }
+// k是循环变量，会依次成为对象的每一个键
+
 
 
