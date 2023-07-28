@@ -5,6 +5,8 @@
 
 
 
+
+
 // // var a = fine;
 // // a()
 
@@ -134,38 +136,93 @@
 
 // ----------------------------------------以下为练习----------------------------------------
 
-function func(x, y) {
-    this.a = x
-    this.b = y
-}
+// function func(x, y) {
+//     this.a = x
+//     this.b = y
+// }
 
 
-function test(e, f) {
-    if (typeof e !== 'object' || typeof f !== 'object') {
-        console.log('我需要对象')
-    } else if (typeof e === 'object' && typeof f === 'object') {
-        const xx = new func(e, f)
-        console.log(xx)
-    }
+// function test(e, f) {
+//     if (typeof e !== 'object' || typeof f !== 'object') {
+//         console.log('我需要对象')
+//     } else if (typeof e === 'object' && typeof f === 'object') {
+//         const xx = new func(e, f)
+//         console.log(xx)
+//     }
 
-}
+// }
 
-let one = {
-    name: 'name'
-    
-}
-let two = {
-    name: 'name',
-    miao: () => console.log('miao')
-}
+// let one = {
+//     name: 'name'
 
-test(one, two)
+// }
+// let two = {
+//     name: 'name',
+//     miao: () => console.log('miao')
+// }
 
-
+// test(one, two)
 
 
+// const x = (a, b) => {
+//     for (let i = 0; i <= a; i++) {
+//         for (let j = 0; j <= b; j++)
+//             console.log(i + '-' + j)
+//     }
+// }
+
+// x(3, 3)
+
+// const x = (a, b, isReverse) => {
+//     if (isReverse === true) {
+//         for (let i = a; i >= 0; i--) {
+//             for (let j = b; j >= 0; j--) {
+//                 console.log(i + '-' + j)
+//             }
+//         }
+//     } else {
+//         for (let i = 0; i <= a; i++) {
+//             for (let j = 0; j <= b; j++) {
+//                 console.log(i + '-' + j)
+//             }
+//         }
+//     }
+// }
+
+// x(6, 8, true)
+
+// const x = (a, b, isReverse) => {
+//     for (let i = isReverse ? 0 : a; isReverse ? i <= a : i>=0 ; isReverse ? i++ : i--) {
+//         for (let j = isReverse ? 0 : b; isReverse ? j <= b : j>=0 ; isReverse ? j++ : j--) {
+//             console.log(i + '-' + j)
+//         }
+//     }
+// }
+
+// x(6, 8, true)
 
 
+// -------important!!!!!!!!!!!!!!!!!!!!!!!!!
+// function LoopObj(name, age) {
+//     this.name = name
+//     this.age = age
+//     this.loop = function (func) {
+//         for (let key in this) {
+//             if (typeof this[key] !== 'function') {
+//                 func(this[key])
+//             }
+//         }
+//     }
+// }
+
+// const loopObj2 = new LoopObj('11111', '22222')
+// const loopObj3 = new LoopObj('100', '200')
+// loopObj2.loop(function (x) {
+//     console.log(x)
+// })
+// loopObj3.loop(function (x) {
+//     console.log(x)
+// })
 
 
 
