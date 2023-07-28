@@ -21,3 +21,10 @@ let person = {
     }
 }
 
+const arr = []
+
+const add = () => {
+    for (let key in person) {
+        arr[i] = person[key]
+    }
+}
