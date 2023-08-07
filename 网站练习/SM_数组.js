@@ -13,9 +13,6 @@
 // arr.length = 1
 // console.log(arr)
 
-<<<<<<< HEAD
-
-=======
 // let person = {
 //     name: '11',
 //     age: '22',
@@ -77,7 +74,6 @@
 // 一个个数据进行cb的测试，返回boolean
 // cb执行后如果返回真值，some方法立即结束，整体结果返回true
 // 如果迭代完一个都没有真，整体返回false
-const arr = [1, 3, 5, 7]
-const test = arr.some(x => x === 1)
-console.log(test)
->>>>>>> 773fdb5037a54243a020f4c907aafa7ac371679b
+// const arr = [1, 3, 5, 7]
+// const test = arr.some(x => x === 1)
+// console.log(test)
