@@ -13,18 +13,4 @@
 // arr.length = 1
 // console.log(arr)
 
-let person = {
-    name: '11',
-    age: '22',
-    talk() {
-        console.log('talk')
-    }
-}
 
-const arr = []
-
-const add = () => {
-    for (let key in person) {
-        arr[i] = person[key]
-    }
-}
