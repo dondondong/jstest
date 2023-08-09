@@ -256,3 +256,55 @@ let arr1 = [1, 2, 3, 4, 5, '33', true, '224', 1, '33', '33']
 
 // -----------
 
+// find 返回符合cb函数的第一个数据的值
+
+// includes 数组中是否包含某个数据
+
+// concat 合并成一个新数组，不改变现有，返回新数组
+// const arr3 = arr1.concat(1,2,3,4,5)
+// const arr3 = arr1.concat(arr2)
+// 可以传数组，也可以传单个数据
+
+// fill 填充
+// 左闭右开，不包括end
+// fill(填充元素，start，end)
+
+// copyWithin 用数据自己的某些数据，覆盖自己数组中特定索引位开始的数据
+// copyWithin(被覆盖的索引位，star，end)
+// 左闭右开
+
+// join 把数组连接成字符串
+// 不传参数，默认用逗号连接
+// join('')
+
+// ----------
+
+// for of 遍历数组
+// for in 遍历对象
+// 对象有可能迭代顺序不确定，如果要按顺序，一定要用数组迭代
+// for of 可迭代 可迭代对象，如数组、字符串（字面量对象不是可迭代对象，是普通对象）
+// const arr = [1, 2, 3]
+// for (let item of arr) {
+//     console.log(item)
+// }
+
+// -----------
+// keys 键
+// value 值
+// entries 对
+
+// const arr = [1, 2, 3, 4, 5, 6, 7]
+// // keys让arr变成可迭代对象
+// const result = arr.keys()
+// // const result = arr.values()
+// // const result = arr.entries()
+// // for遍历出索引值、值、键值对数组
+// for (let i of result) {
+//     console.log(i)
+// }
+
+// ----------------
+
+// 总结
+
+
