@@ -2,6 +2,7 @@
 // const a = new Array(22)
 // console.log(a)
 
+
 // 新增的索引位，是length
 // 数组最后一个元素的索引位，是length - 1
 
@@ -212,7 +213,7 @@
 
 // 练习：函数传入两个参数，第一个是数组，第二个是类型，函数能把数组中所有符合类型的索引位都找出来，组成新数组
 
-let arr1 = [1, 2, 3, 4, 5, '33', true, '224', 1, '33', '33']
+// let arr1 = [1, 2, 3, 4, 5, '33', true, '224', 1, '33', '33']
 // let arr2 = []
 
 // function func(arr, type) {
@@ -305,6 +306,57 @@ let arr1 = [1, 2, 3, 4, 5, '33', true, '224', 1, '33', '33']
 
 // ----------------
 
-// 总结
+// 练习：构造函数，数组数据成为实例
+// let arr = [2, 6, 3, 33, 12, 34, 52, 9]
+//     // 构造函数
+// function item(age) {
+//     this.age = age
+// }
+//     // 新数组
+// let arr2 = []
+//     // 让新数组接收旧数组每一个数据的map，map把每个数据赋予给构造函数的新的实例
+// arr2 = arr.map(function (ele) {
+//     let ele2 = new item(ele)
+//     // 返回这个实例
+//     return ele2
+// })
+
+// function compare(a,b){ return a.age-b.age }
+// arr2.sort(compare)
+
+// console.log(arr2)
 
 
+// 练习：对比两个数组是否有相同数据，有的话返回true，否则返回false
+
+// let arr1 = [1, 2, 3]
+// let arr2 = [7, 3, 5, 8, 4]
+
+// function func(ele1, ele2) {
+//     // map数组ele1，cb检测ele2中是否包含，结果以temparr接收，并形成一个由true、false组成的数组
+//     let temparr = ele1.map((ele1) => {
+//         return ele2.includes(ele1)
+//     })
+//     // 判断temparr中是否包含true，是的话即🈶有相同数据，false即无
+//     if (temparr.includes(true)) {
+//         return true
+//     } else { return false }
+// }
+
+// console.log(func(arr1, arr2))
+
+let arr = [
+    { name: 'a', score: 99 },
+    { name: 'b', score: 50 },
+    { name: 'c', score: 82 },
+    { name: 'd', score: 23 }
+]
+let arr2 = []
+
+function func(arr, label) {
+    arr2 = arr.filter(ele => ele.score < 80)
+    arr2.forEach((ele) => ele.label = label)
+
+}
+
+func(arr, 'age')
