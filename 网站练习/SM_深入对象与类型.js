@@ -200,4 +200,8 @@
 // Object.entries()
 // Object.create(null) // 创建一个没有任何原型的对象
 // Object.freeze() // 不能改属性
-// 
+
+// 原型上的方法
+// Object.prototype.hasOwnProperty() // 检测某个方法、属性是否其实例本身上的
+// Object.isPrototypeOf() // 检测某个对象是否在另一个对象的原型链上
+// Object.toString()

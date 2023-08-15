@@ -519,28 +519,28 @@
 
 // 练习：把非type的数据从原数组删掉，并赋予给新数组
 
-let arr = [1, 3, 233, '222']
+// let arr = [1, 3, 233, '222']
 
-function func(arr, type) {
-    // 接收待切数据的索引位
-    let spliceIdx = []
-    // 计算切后的索引位变化
-    let spliceCount = 0;
-    let arr2 = []
-    // push要切的索引位
-    arr.forEach((ele, idx) => {
-        if (typeof ele !== type) {
-            spliceIdx.push(idx)
-        }
-    })
-    // 切，每切走一个，所有数据的索引位减1，idx不变，因此要spliceCount++。splice返回的一个个数组要合并成一个数组，用扩展运算符拆出里面的数据
-    spliceIdx.forEach((idx) => {
-        arr2.push(...arr.splice(idx - spliceCount, 1))
-        spliceCount ++
-    })
-    return arr2
-}
+// function func(arr, type) {
+//     // 接收待切数据的索引位
+//     let spliceIdx = []
+//     // 计算切后的索引位变化
+//     let spliceCount = 0;
+//     let arr2 = []
+//     // push要切的索引位
+//     arr.forEach((ele, idx) => {
+//         if (typeof ele !== type) {
+//             spliceIdx.push(idx)
+//         }
+//     })
+//     // 切，每切走一个，所有数据的索引位减1，idx不变，因此要spliceCount++。splice返回的一个个数组要合并成一个数组，用扩展运算符拆出里面的数据
+//     spliceIdx.forEach((idx) => {
+//         arr2.push(...arr.splice(idx - spliceCount, 1))
+//         spliceCount ++
+//     })
+//     return arr2
+// }
 
-console.log(func(arr, 'string'))
+// console.log(func(arr, 'string'))
 
 // ---------------------------
