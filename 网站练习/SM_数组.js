@@ -544,3 +544,23 @@
 // console.log(func(arr, 'string'))
 
 // ---------------------------
+
+// 练习：数字加总，其余传进新数组（关键知识：ele instanceof Array === true）
+// let arr = [1, [2, 3], 6, [9, 'true,1'], [6, 10], true]
+// function func(arr) {
+//     let total = 0
+//     let arr2 = []
+//     arr.forEach((ele) => {
+//         if (typeof ele === 'number') {
+//             total += ele
+//         } else if (ele instanceof Array) {
+//             ele.forEach((ele) => {
+//                 if (typeof ele === 'number') {
+//                     total += ele
+//                 } else { arr2.push(ele) }
+//             })
+//         } else { arr2.push(ele) }
+//     })
+//     return arr2
+// }
+// console.log(func(arr))
