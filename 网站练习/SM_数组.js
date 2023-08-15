@@ -345,18 +345,202 @@
 
 // console.log(func(arr1, arr2))
 
-let arr = [
-    { name: 'a', score: 99 },
-    { name: 'b', score: 50 },
-    { name: 'c', score: 82 },
-    { name: 'd', score: 23 }
-]
-let arr2 = []
+// 练习：
+// let arr = [
+//     { name: 'a', score: 99 },
+//     { name: 'b', score: 50 },
+//     { name: 'c', score: 82 },
+//     { name: 'd', score: 23 }
+// ]
 
-function func(arr, label) {
-    arr2 = arr.filter(ele => ele.score < 80)
-    arr2.forEach((ele) => ele.label = label)
+// function func(arr, label) {
+//     let arr2 = arr.filter(ele => ele.score < 80)
+//     arr2.forEach((ele) => ele.label = label)
+//     arr.reverse()
+//     let arr3 = arr.map((ele) => {
+//         return {
+//             ...ele
+//         }
 
+//     })
+//     return arr3
+
+// }
+
+// console.log(func(arr, 'age'))
+
+// ------------------
+
+// 练习：输出数组中与输入值完全相等的数据的数量
+// let arr = [[1, 3, 4, 6, 1, 1, 3, 4], [4, 5, 2, 1, 'fff', 5, 2, 7, 5, 9], [4, 5, 2, 1, 5, 2, 7, 5, 9]]
+
+// 太复杂，可直接用filter
+// function func(arr, str) {
+//     let tempArr = []
+//     let tempArr2 = []
+//     for (i = 0; i < arr.length; i++) {
+//         tempArr = tempArr.concat(arr[i])
+//     }
+//     let idx = tempArr.indexOf(str)
+//     while (idx !== -1) {
+//         tempArr2.push(idx)
+//         idx = tempArr.indexOf(str, idx + 1)
+//     }
+//     return tempArr2.length
+// }
+
+// 我的方法：新数组接收map返回filter后的元素的length，再加总新数组
+// function func2(arr, str) {
+//     let tempArr = []
+//     tempArr = arr.map((ele) => {
+//         return ele.filter((ele) => ele === str).length
+//     })
+
+//     return tempArr.reduce((pv, cv) => pv + cv)
+// }
+
+// 老师的方法：新数组在foreach里接收filter后的元素（每次循环，扩展运算符），再返回新数组的length
+// function func3(arr, str) {
+//     let result = []
+//     arr.forEach((ele) => {
+//         const temp = ele.filter((ele) => ele === str)
+//         result = [...result, ...temp]
+//     })
+//     return result.length
+// }
+
+// console.log(func3(arr, 2))
+
+// ------------------
+
+// 练习：新数组承载传入数组的每一个数据的“索引位的值+下一个索引位的值”
+// let arr = [1, 2, 3, 4, 5, 6]
+
+// function func(arr) {
+//     let arr2 = []
+//     arr.forEach((ele, idx) => {
+//         if (idx < arr.length - 1) {
+//             arr2.push(idx + idx + 1)
+//         } else {
+//             arr2.push(idx + 0)
+//         }
+
+//     })
+//     return arr2
+// }
+// console.log(func(arr))
+
+// --------------------
+
+// 练习：数字加总，字符串合并，加入到原数组的后面
+// let arr = ['111', 23, 55, 24, '355', true]
+// function func(arr) {
+//     let arrNumber = []
+//     let arrString = []
+//     arr.filter((ele) => {
+//         if (typeof ele === 'number') {
+//             arrNumber.push(ele)
+//         } else if (typeof ele == 'string') {
+//             arrString.push(ele)
+//         }
+//     })
+//     arr.push(
+//         arrNumber.reduce((pv, cv) => pv + cv)
+//     )
+//     arr.push(
+//         arrString.join('')
+//     )
+//     return arr
+// }
+// console.log(func(arr))
+
+// 你看看老师做的：
+// let arr = ['111', 23, 55, 24, '355', true]
+// function func(arr) {
+//     let arrNumber = 0
+//     let arrString = ''
+//     arr.forEach((ele) => {
+//         if (typeof ele === 'number') {
+//             arrNumber += ele
+//         } else if (typeof ele == 'string') {
+//             arrString += ele
+//         }
+//     })
+//     arr.push(arrNumber, arrString)
+//     return arr
+// }
+// console.log(func(arr))
+
+// ----------------------
+
+// 练习：拆分字符串，倒序放进数组
+
+// function test(str) {
+//     let arr = []
+//     for (let i of str) {
+//         arr.push(i)
+//     }
+//     return arr.reverse()
+// }
+
+// console.log(test('helloworld'))
+
+// ----------------------
+
+// 练习：检测是否至少有某种类型的数据，有的话全部替换为输入的检测类型，没有的话清空
+
+// let arr = [1, 3, 233, '222']
+// function func(arr, type) {
+//     arr.forEach((ele, idx) => {
+//         if (typeof ele === type) {
+//             arr.fill(type, 0, arr.length)
+//         } else if (typeof ele !== type && idx === arr.length - 1) {
+//             arr.splice(0)
+//         }
+//     })
+//     return arr
+// }
+// console.log(func(arr, 'string'))
+
+// 看看别人老师做的：
+// let arr = [1, 3, 233, '222']
+// function func(arr, type) {
+//     const isTrue = arr.some((ele) => typeof ele === type)
+//     if (isTrue) {
+//         arr.fill(type)
+//     } else {
+//         arr.length = 0
+//     }
+//     return arr
+// }
+// console.log(func(arr, 'string'))
+
+// ------------------------
+
+// 练习：把非type的数据从原数组删掉，并赋予给新数组
+
+let arr = [1, 3, 233, '222']
+
+function func(arr, type) {
+    // 接收待切数据的索引位
+    let spliceIdx = []
+    // 计算切后的索引位变化
+    let spliceCount = 0;
+    let arr2 = []
+    // push要切的索引位
+    arr.forEach((ele, idx) => {
+        if (typeof ele !== type) {
+            spliceIdx.push(idx)
+        }
+    })
+    // 切，每切走一个，所有数据的索引位减1，idx不变，因此要spliceCount++。splice返回的一个个数组要合并成一个数组，用扩展运算符拆出里面的数据
+    spliceIdx.forEach((idx) => {
+        arr2.push(...arr.splice(idx - spliceCount, 1))
+        spliceCount ++
+    })
+    return arr2
 }
 
-func(arr, 'age')
+console.log(func(arr, 'string'))
+
+// ---------------------------
