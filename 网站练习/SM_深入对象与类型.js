@@ -182,3 +182,76 @@
 // Object.prototype.hasOwnProperty() // 检测某个方法、属性是否其实例本身上的
 // Object.isPrototypeOf() // 检测某个对象是否在另一个对象的原型链上
 // Object.toString()
+
+// -------------------------
+
+// 包装类型
+// Number String Boolean
+// 可以直接转换数据类型
+// console.log(Number('111'))
+// console.log('32好'.length)
+
+// 原型方法
+// toFixed() 保留几位小数
+
+// String
+// length
+// split() 通过xx把字符串分开并返回数组
+// includes()
+// trim() 切割空白字符
+// toUpperCase()
+// toLowerCase()
+// slice()
+// substring()
+// indexOf()
+// laseIndexOf()
+// concat()
+// repeat()
+// startWith()
+// endsWith()
+// fromCharCode()
+// charCodeAt()
+// codePointAt()
+// charAt()
+// padStart()
+// padEnd()
+
+// ----------------------
+
+// 对象使用的小技巧
+
+// 简写赋值
+// let n = 'matt'
+// let person = {
+//     n // 相当于 n:n
+//     abc // 相当于赋值外部的abc函数
+// }
+
+// 可计算属性
+// let nameKey = 'name'
+// let person = {
+//     [nameKey + 'abc']: 'Matt', // 对象属性、对象方法名字可以用变量、表达式
+//     [nameKey](x){ console.log(x) }
+// }
+
+// 对象解构
+// 快速把对象中的数据赋值到当前环境的变量中
+// let person = {
+//     name: 'Matt',
+//     age: 27
+// }
+// let { name: personName, age: personAge } = person // 类似反向的字面量对象的生成，personName是‘Matt’，personAge是’27‘
+// let { name, age } = person // 属性同名变量名
+
+// 数字和字符串也可以被结构
+// let { length } = 'Matt'
+// console.log(length) // 4
+
+// 嵌套也可以取值
+// let person = {
+//     job: {
+//         title: 'designer'
+//     }
+// }
+// let { job: { title: abc } } = person
+// console.log(abc)
