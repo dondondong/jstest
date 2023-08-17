@@ -272,5 +272,22 @@
 
 // ----------------------------------
 
-// 练习：
+// 练习：类自己有一个函数，每次传参数，会赋值给类自己的属性cache，并以数字累增为键
+// class Barry extends Array {
+//     constructor() {
+//         super()
+//         this.cache = {}
+//         this.count = 0
+//     }
+//     push(str) {
+//         this.cache[this.count] = str
+//         this.count++
+//     }
+// }
 
+// const test = new Barry()
+// test.push('333')
+// test.push('333')
+// console.log(test)
+
+// ---------------------------------
