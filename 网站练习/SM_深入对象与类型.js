@@ -255,3 +255,22 @@
 // }
 // let { job: { title: abc } } = person
 // console.log(abc)
+
+// ------------------------------
+
+// 练习：
+// class test {
+//     constructor(str) {
+//         this.text = str
+//     }
+//     splitStr() {
+//         return this.text.split(',')
+//     }
+// }
+// let test1 = new test('hello,333,543')
+// console.log(test1.splitStr())
+
+// ----------------------------------
+
+// 练习：
+
