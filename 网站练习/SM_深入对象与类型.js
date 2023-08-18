@@ -291,3 +291,23 @@
 // console.log(test)
 
 // ---------------------------------
+
+// 再聊作用域
+
+let a = 100
+let b = 200
+
+function test() {
+    const innerA = 6
+    const innerB = 8
+    const abc = {
+        name: 'aaa',
+        go() {
+            console.log(innerA)
+        }
+    }
+    console.log(abc)
+}
+
+test()
+
