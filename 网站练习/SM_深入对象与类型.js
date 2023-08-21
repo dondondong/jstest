@@ -294,20 +294,73 @@
 
 // 再聊作用域
 
-let a = 100
-let b = 200
+// let a = 100
+// let b = 200
 
-function test() {
-    const innerA = 6
-    const innerB = 8
-    const abc = {
-        name: 'aaa',
-        go() {
-            console.log(innerA)
-        }
-    }
-    console.log(abc)
-}
+// function test() {
+//     const innerA = 6
+//     const innerB = 8
+//     const abc = {
+//         name: 'aaa',
+//         go() {
+//             console.log(innerA)
+//         }
+//     }
+//     console.log(abc)
+// }
 
-test()
+// test()
+
+// ---------------------------------
+
+// 闭包
+
+// 画图再理解
+
+// function test() {
+//     let i = 0
+//     console.log(i)
+//     return function go() {
+//         i++
+//         return i
+//     }
+// }
+
+// let go2 = test()
+// console.log(go2())
+// console.log(go2())
+// console.log(go2())
+// console.log(go2()) // 闭包内自己复制了一份，自闭环，i已经加到4
+// test() // 全局函数访问不了闭包里的东西，i仍然是0
+// test()
+
+// ------------------------------------
+
+// 递归
+
+// let i = 0
+// function test() {
+//     i++
+//     console.log(i)
+//     if (i < 100) {
+//         test()
+//     }
+// }
+// test()
+
+// 要给递归一个出口
+
+// -------------------------------------
+
+// 线程
+// 同步，依次进行。异步，某个时机进行
+// Asynchronous 异步
+// Synchronize 同步
+
+// 定时器
+// setTimeout
+// setInterval(function, time)
+
+
+
 
