@@ -13,6 +13,10 @@
 //     this.name = name
 // }
 
+const { func } = require("assert-plus");
+const { arguments } = require("commander");
+const { F } = require("types-ramda");
+
 // dog.prototype.swim = function () {
 //     console.log(this.name, 'swimming')
 // }
@@ -368,4 +372,94 @@
 
 // 初识事件循环机制
 
+// ---------------------------------------
 
+// 练习：实现一个深克隆函数
+
+// const obj = {
+//     a: 123,
+//     b: {
+//         x: 123,
+//         y: {
+//             t: '是我'
+//         }
+//     },
+//     c: true
+// }
+
+// function clone(o) {
+//     const cloneObj = {}
+
+//     Object.keys(o).forEach((key, index) => {
+//         if (typeof o[key] === 'object') {
+//             cloneObj[key] = clone(o[key])
+//         } else {
+//             cloneObj[key] = o[key]
+//         }
+//     })
+
+//     return cloneObj
+// }
+
+// const result = clone(obj)
+
+// console.log(result)
+
+// ---------------------------------------
+
+// 练习：函数加总传入的所有参数
+
+// function allPlus() {
+//     const arr = Array.from(arguments)
+//     const result = arr.reduce((p, v) => {
+//         return p + v
+//     }, 0)
+//     return result
+// }
+
+// console.log(allPlus(1, 2, 4, 4))
+
+// 剩余运算符实现
+
+// function allPlus(...all) {
+//     const result = all.reduce((p, v) => {
+//         return p + v
+//     }, 0)
+//     return result
+// }
+// console.log(allPlus(1, 2, 4, 4))
+
+
+// -------------------------------------
+
+// 练习：用三种方法把函数中的arguments转换成数组
+
+// 1
+// function test() {
+//     const arr = Array.from(arguments)
+// }
+
+// 2
+// function test() {
+//     const arr = [].slice.call(arguments)
+// }
+
+// 3
+// const arr = [...arguments]
+
+// --------------------------------------
+
+function func() {
+    const arr = []
+    const obj = {
+        listen(fn) {
+            arr.push(fn)
+        },
+        dispatch() {
+            arr.forEach((key, index) => {
+                key()
+            })
+        }
+    }
+    return obj
+}
