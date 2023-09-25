@@ -13,10 +13,6 @@
 //     this.name = name
 // }
 
-const { func } = require("assert-plus");
-const { arguments } = require("commander");
-const { F } = require("types-ramda");
-
 // dog.prototype.swim = function () {
 //     console.log(this.name, 'swimming')
 // }
@@ -449,17 +445,22 @@ const { F } = require("types-ramda");
 
 // --------------------------------------
 
-function func() {
-    const arr = []
-    const obj = {
-        listen(fn) {
-            arr.push(fn)
-        },
-        dispatch() {
-            arr.forEach((key, index) => {
-                key()
-            })
-        }
-    }
-    return obj
-}
+// 练习：对象有两个函数，listen传入函数作为参数，并推送至一个数组，dispatch会让数组中的函数依次执行。
+
+// function func() {
+//     const arr = []
+//     const obj = {
+//         listen(fn) {
+//             arr.push(fn)
+//         },
+//         dispatch() {
+//             arr.forEach((key, index) => {
+//                 key()
+//             })
+//         }
+//     }
+//     return obj
+// }
+
+// ---------------------------------------
+
