@@ -40,6 +40,8 @@
 
 
 
+
+
 // -------------------
 
 // 深入了解DOM
@@ -457,3 +459,50 @@ CSSStyleDeclaration, HTMLElement.style
 
 // DOM的接口标准的level问题
 // DOM4
+
+
+// ------------------------------------------------------------------------  
+
+// DOM 事件
+
+// DOM中的事件 - 行为 行为背后对应着某些执行函数
+
+
+
+
+
+
+
+
+
+
+
+
+// ------------------------------------------------------------------------
+
+// 滚动变字体大小尝试
+
+// var title = document.getElementById('num')
+// // var titleFontSizePX = getComputedStyle(title).fontSize
+// var titleFontSizePX = '70px'
+// var titleFontSizePXInt = parseFloat(titleFontSizePX, 10)
+
+// var titleFontSizeVWInt = titleFontSizePXInt * (100 / window.innerWidth)
+// var titleFontSizeVW = titleFontSizeVWInt + 'vw'
+// title.style.fontSize = titleFontSizeVW
+
+// var lastScroll = 0
+
+// function updateFontSize(event) {
+//     if (lastScroll != window.scrollY) {
+//         var titleSizeMax = titleFontSizeVWInt - 0.02 * window.scrollY
+//         var titleSizeMin = titleFontSizeVWInt * 2 / 5
+//         title.style.fontSize = Math.max(10, titleSizeMax) + 'vw'
+//     }
+//     lastScroll = window.scrollY
+// }
+
+// var events = ['scroll', 'touchmove']
+// events.forEach(event => document.addEventListener(event, updateFontSize))
+
+
